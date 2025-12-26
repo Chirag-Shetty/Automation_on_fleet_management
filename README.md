@@ -15,7 +15,7 @@ The server runs on `http://localhost:5000`
 ### Frontend
 
 ```bash
-cd cfgfrontend
+cd frontend
 npm install
 npm start
 ```

@@ -1,0 +1,259 @@
+.google-translate-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 8px;
+  transition: all 0.3s ease;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 200px;
+}
+
+.google-translate-container:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.google-translate-container.dragging {
+  transition: none;
+  transform: none;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  z-index: 1001;
+}
+
+.drag-handle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  cursor: grab;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.drag-handle:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.drag-handle:active {
+  cursor: grabbing;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.drag-icon {
+  font-size: 12px;
+  color: #666;
+  font-weight: bold;
+  line-height: 1;
+  transform: rotate(90deg);
+}
+
+.reset-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  color: #666;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+  opacity: 0;
+  animation: fadeIn 0.2s ease forwards;
+}
+
+.reset-button:hover {
+  background: rgba(255, 255, 255, 1);
+  border-color: #007bff;
+  color: #007bff;
+  transform: scale(1.1);
+}
+
+.reset-button:active {
+  transform: scale(0.95);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.google-translate-widget {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+/* Custom styling for Google Translate elements */
+.google-translate-container .goog-te-gadget {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif !important;
+  font-size: 14px !important;
+  color: #333 !important;
+  width: 100%;
+}
+
+.google-translate-container .goog-te-gadget .goog-te-combo {
+  background: #ffffff;
+  border: 1px solid #e1e5e9;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+  min-width: 120px;
+}
+
+.google-translate-container .goog-te-gadget .goog-te-combo:hover {
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.1);
+}
+
+.google-translate-container .goog-te-gadget .goog-te-combo:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
+}
+
+/* Hide Google Translate branding */
+.google-translate-container .goog-te-banner-frame {
+  display: none !important;
+}
+
+.google-translate-container .goog-te-gadget .goog-te-combo option {
+  background: #ffffff;
+  color: #333;
+  padding: 8px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .google-translate-container {
+    top: 10px;
+    right: 10px;
+    padding: 6px;
+    min-width: 180px;
+  }
+  
+  .drag-handle,
+  .reset-button {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .drag-icon {
+    font-size: 10px;
+  }
+  
+  .reset-button {
+    font-size: 10px;
+  }
+  
+  .google-translate-container .goog-te-gadget .goog-te-combo {
+    font-size: 12px;
+    padding: 6px 8px;
+    min-width: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .google-translate-container {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    left: 10px;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    min-width: auto;
+  }
+  
+  .google-translate-container .goog-te-gadget .goog-te-combo {
+    width: 100%;
+    max-width: 200px;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .google-translate-container {
+    background: rgba(30, 30, 30, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .drag-handle:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .drag-handle:active {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  .drag-icon {
+    color: #ccc;
+  }
+  
+  .reset-button {
+    background: rgba(50, 50, 50, 0.8);
+    border-color: rgba(255, 255, 255, 0.2);
+    color: #ccc;
+  }
+  
+  .reset-button:hover {
+    background: rgba(50, 50, 50, 1);
+    border-color: #007bff;
+    color: #007bff;
+  }
+  
+  .google-translate-container .goog-te-gadget {
+    color: #ffffff !important;
+  }
+  
+  .google-translate-container .goog-te-gadget .goog-te-combo {
+    background: #2d2d2d;
+    border-color: #444;
+    color: #ffffff;
+  }
+  
+  .google-translate-container .goog-te-gadget .goog-te-combo option {
+    background: #2d2d2d;
+    color: #ffffff;
+  }
+}
+
+/* Prevent text selection during drag */
+.google-translate-container * {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Allow text selection in dropdown options */
+.google-translate-container .goog-te-gadget .goog-te-combo option {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+} 

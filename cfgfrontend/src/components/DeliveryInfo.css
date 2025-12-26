@@ -1,0 +1,91 @@
+.delivery-info-page {
+  padding: 2rem;
+  text-align: center;
+}
+
+.delivery-card {
+  margin: 1.5rem auto;
+  padding: 1.5rem;
+  max-width: 400px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+
+.map-container {
+  margin: 2rem auto;
+  max-width: 600px;
+  text-align: left;
+}
+
+.map-container h3 {
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.map-container p {
+  text-align: center;
+  color: #666;
+  font-style: italic;
+  padding: 2rem;
+}
+
+.delivery-actions {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.primary-btn {
+  background: #2d9cdb;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.primary-btn:hover {
+  background: #1f7bb8;
+}
+
+.secondary-btn {
+  background: #f8f9fa;
+  color: #2d9cdb;
+  border: 2px solid #2d9cdb;
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.secondary-btn:hover {
+  background: #2d9cdb;
+  color: #fff;
+}
+
+/* Leaflet map customizations */
+.leaflet-container {
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.leaflet-popup-content {
+  margin: 8px;
+}
+
+.leaflet-popup-content h4 {
+  margin: 0 0 8px 0;
+  color: #333;
+}
+
+.leaflet-popup-content p {
+  margin: 0;
+  color: #666;
+}
